@@ -28,3 +28,6 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 
 # Instalar dependencias
 pip install -r requirements.txt
+
+#Para correr el programa
+ uvicorn app.main:app --reload 
