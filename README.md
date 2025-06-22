@@ -4,16 +4,18 @@ Este es el backend del proyecto **"Procesador de Videos con Resumen Automático"
 
 ## Funcionalidades
 
-- Subida de video vía API
-- Extracción de audio con `moviepy==1.0.3`
-- Transcripción automática con `Whisper`
-- Generación de resumen con `transformers` (modelo BART o similar)
-- Respuesta en formato JSON con transcripción y resumen
+- **Subida de videos** vía API con `FastAPI` y `UploadFile`
+- **Extracción de audio** desde el video usando `moviepy==1.0.3` y `pydub`
+- **Transcripción automática** del audio mediante `openai-whisper` (requiere `torch`)
+- **Generación de resumen** utilizando el modelo `facebook/bart-large-cnn` con `transformers`
+- **Respuesta estructurada** en formato JSON que incluye:
+  - Transcripción completa del video
+  - Resumen del contenido
 
 ## Requisitos
 
 - Python 3.9 o superior
-- ffmpeg (instalado en el sistema)
+- ffmpeg (debe estar instalado en el sistema)
 
 ## Instalación
 
@@ -29,5 +31,5 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 # Instalar dependencias
 pip install -r requirements.txt
 
-#Para correr el programa
- uvicorn app.main:app --reload 
+# Ejecución del Servidor
+uvicorn app.main:app --reload
