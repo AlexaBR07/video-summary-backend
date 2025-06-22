@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 from app.audio_extractor import extract_audio
 from app.transcriber import transcribe_audio
-
+from app.summarizer import summarize_text
 
 app = FastAPI()
 
@@ -31,7 +31,11 @@ async def upload_video(file: UploadFile = File(...)):
     # 2. Transcribir audio
     transcription = transcribe_audio(audio_path)
 
+    # 3. Resumir transcripción
+    summary = summarize_text(transcription)
+
     print(f"Transcription for {file.filename} completed successfully.")
     return {
-        "transcription": transcription
+        "transcription": transcription,
+        "summary": summary
     }

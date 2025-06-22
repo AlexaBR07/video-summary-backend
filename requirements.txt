@@ -3,3 +3,6 @@ openai-whisper
 fastapi
 uvicorn
 python-multipart
+transformers
+torch
+pydub
