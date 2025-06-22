@@ -5,7 +5,7 @@ Este es el backend del proyecto **"Procesador de Videos con Resumen Automático"
 ## Funcionalidades
 
 - Subida de video vía API
-- Extracción de audio con `moviepy`
+- Extracción de audio con `moviepy==1.0.3`
 - Transcripción automática con `Whisper`
 - Generación de resumen con `transformers` (modelo BART o similar)
 - Respuesta en formato JSON con transcripción y resumen
