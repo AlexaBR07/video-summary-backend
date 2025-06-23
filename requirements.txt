@@ -6,3 +6,7 @@ python-multipart
 transformers
 torch
 pydub
+# Dependencias adicionales para pruebas
+pytest
+httpx
+pytest-asyncio
